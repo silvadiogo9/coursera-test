@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Anatomy of a CSS Rule</title>
+<style>
+
+* {
+  box-sizing: border-box;
+  /*margin: 0;*/
+  /*padding: 0;*/
+}  
+
+/* all h2 elements */
+h2 {
+  color: red;
+  text-align: center;
+}
+
+/* all p AND h1 elements */
+/* p, */h1 {
+  color: blue;
+  text-align: center;
+}
+
+
+/* all with class="highlight" */
+.highlight {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  background-color: green;
+  opacity: .6;
+}
+
+.style {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0000ff;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 24px; /* points (pt) are used in print, not screen.*/
+  text-transform: uppercase;
+  text-align: right;  
+}
+
+/* all p elements with class="highlight" */
+p.highlight {  
+  font-style: italic;
+}
+
+/* all elements with class 'highlight' as well as with class 'mainpoint'. */
+.mainpoint.highlight {
+  color: red;
+  background-color: black;
+}
+
+/* element with id="mainPoint" */
+#mainPoint {
+  font-size: 24px;
+  font-weight: bold;
+  background-color: red;
+  opacity: .7;
+}
+
+body > div.fontsize {
+  font-size: 120%;
+}
+
+
+/* all li elements that are inside a section element. */
+section li {
+  color: green;
+}
+
+/* any article element which is a direct child of a section element,i.e., any article element whose immediate parent is a section element. */
+section > article {
+  color: green;
+  font-size: 24px;
+}
+
+/* any h2 element which is a direct child of a section element,i.e., any h2 element whose immediate parent is a section element. */
+section > h2 {
+  color: green;
+}
+
+#box {
+  background-color: blue;
+  padding: 10px;
+  border: 5px solid black;
+  width: 300px;
+  height: 50px;
+  margin-top: 50px;
+  overflow: auto;
+}
+
+#content {
+  background-color: #90EE90; /* green */
+}
+
+#bg {
+  width: 500px;
+  height: 500px;
+  background: url('yaakov.png') no-repeat top center;
+  background-color: blue;
+  margin-top: 10px;
+}
+
+#floating-after {
+  background-color: #00FFFF;
+}
+
+p.floating-after {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+#p1 {
+  background-color: #A52A2A;
+  float: left;
+  height: 150px;
+}
+#p2 {
+  background-color: #DEB887;
+  float: right;
+  height: 100px;
+}
+#p3 {
+  background-color: #5F9EA0;
+  clear: both;
+}
+#p4 {
+  background-color: #FF7F50;
+}
+
+div > section {
+  clear: left;
+}
+
+p.two-column {
+  width: 50%;
+  /*border: 1px solid black;*/
+  float: left;
+  padding: 10px;
+}
+
+section.two-column {
+  clear: left;
+}
+
+header li {
+  list-style: none;
+}
+a:link, a:visited {
+  text-decoration: none;
+  background-color: green;
+  border: 1px solid blue;
+  color: black;
+  display: block;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 1px;
+}
+
+a:hover, a:active {
+  background-color: red;
+  color: purple;
+}
+
+header li:nth-child(3) {
+  font-size: 24px;
+}
+
+section div:nth-child(odd) {
+  background-color: gray;
+}
+
+section div:nth-child(4):hover {
+  background-color: green;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="http://goo.gl/V0Wl6s" target="_blank">AngularJS Course</a></li>
+      <li><a href="http://www.facebook.com/CourseraWebDev" target="_blank">Facebook Fan Page</a></li>
+    </ul>
+  </header>
+
+  <h1>Simple Selectors (h1)</h1>
+  <h2>Subheading 1 (h2)</h2>
+  <h1 class="highlight">Element with Class Selector</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus amet alias est? Nobis cum quasi at soluta odit, maiores quaerat dolores expedita ex nemo ea repellendus dolorem sed maxime quos?</p>
+  <p class="highlight">This is P with CLASS="highlight"</p>
+  <p class="style">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam fugiat repudiandae fugit porro commodi amet possimus sit atque, non obcaecati, et repellendus enim perferendis nobis quibusdam vero nulla magni quaerat!</p>
+  <div class="mainpoint highlight">This is the main point of the entire article.</div>
+  <h2>Subheading 2 (h2)</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi nemo ipsum dolores vel modi magnam veniam alias at nam. Voluptatem officiis dolor dolorem aspernatur dolorum modi ipsa, nobis animi aut!</p>
+  <div>This is the main point of the entire article. So, attribute 
+    <span id="mainPoint">id="mainPoint".</span> </div>
+  <h1>Decendant Selector</h1>
+  <section>
+    Table of contents:
+    <ul>
+      <li>Article 1</li>
+      <li>Article 2</li>
+      <li>Article 3</li>
+    </ul>
+  </section>
+  <article>
+    Shopping List:
+    <ul>
+      <li>Cookies</li>
+      <li>Cake</li>
+      <li>Pie</li>
+    </ul>
+  </article>
+  <h1>Child Selector</h1>
+  <section>
+    <h2>Subheading 1</h2>
+    <div>
+      <article>ARTICLE which inside DIV, which is inside SECTION</article>
+    </div>
+  </section>
+  <section>
+    <article>ARTICLE as a direct child of the SECTION element.</article>
+  </section>
+  <div style="font-size: 2em;">2em text
+    <div style="font-size: 2em;">4em text
+      <div style="font-size: .5em;">2em again!</div>
+    </div>
+  </div>
+  <div id="box">
+    <div id="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit error quis ab perspiciatis eos inventore recusandae iste itaque numquam facilis, tenetur. Doloribus officiis quae facilis, nisi, ex similique. Animi, perferendis. 
+    </div>
+  </div>
+  <div id="bg">Background properties are fun!</div>
+  <div id="floating-after">
+    <p class="floating-after" id="p1"></p>
+    <p class="floating-after" id="p2"></p>
+    <p class="floating-after" id="p3"></p>
+    <p class="floating-after" id="p4"></p>
+    <section>This is regular content continuing after the the paragraph boxes.</section>
+  </div>
+  <div class="two-column">
+    <p class="two-column">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia distinctio aliquid cupiditate perferendis fuga, sit quasi alias vero sunt non, ratione earum dolores nihil! Consequuntur pariatur totam incidunt soluta expedita.</p>
+    <p class="two-column">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta beatae voluptatibus veniam placeat iure unde assumenda porro neque voluptate esse sit magnam facilis labore odit, provident a ea! Nulla, minima.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius nemo vitae, cupiditate odio magnam reprehenderit esse eum reiciendis repellendus incidunt sequi! Autem, laudantium, accusamus. Doloribus tempora alias minima laborum, provident!</p>
+    <section class="two-column">This is regular content continuing after the the paragraph boxes.</section>
+  </div>
+
+  <section>
+    <div>DIV 1</div>
+    <div>DIV 2</div>
+    <div>DIV 3</div>
+    <div>DIV 4</div>
+    <div>DIV 5</div>
+    <div>DIV 6</div>
+    <div>DIV 7</div>
+    <div>DIV 8</div>
+    <div>DIV 9</div>
+    <div>DIV 10</div>
+    <div>DIV 11</div>
+    <div>DIV 12</div>
+    <div>DIV 13</div>
+    <div>DIV 14</div>
+    <div>DIV 15</div>
+    <div>DIV 16</div>
+    <div>DIV 17</div>
+    <div>DIV 18</div>
+    <div>DIV 19</div>
+    <div>DIV 20</div>
+  </section>
+
+</body>
+
+</html>
+
