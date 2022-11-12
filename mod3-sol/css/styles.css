@@ -46,10 +46,6 @@
 }
 
 /** BODY CONTAINER **/
-body{
-  padding-top: 70px;
-}
-
 .container-fluid{
   background-color: grey;
   margin: 25px;
