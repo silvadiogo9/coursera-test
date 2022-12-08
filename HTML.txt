@@ -1,0 +1,56 @@
+https do repositório -> terminal:
+(https://github.com/silvadiogo9/coursera-test.git)
+git clone "https do repositório"
+ls
+cd "coursera-test"
+git status
+
+GIT HUB
+Sempre que houver alterações no ficheiro html:
+git add .
+git commit -m "comentário"
+git push
+git status
+
+C:\Users\Diogo Silva\coursera-test\site>browser-sync start --server --directory --files "**/*" ou "*"
+
+CONSOLE
+
+cd desiredpaste
+sublime .
+
+----------------------------------------------------------
+
+<style>
+
+p {
+  color: maroon;
+}
+
+</style>
+</head>
+<body>
+<h1>Origin Example</h1>
+<p>The rule is simple: last declaration wins.</p>
+<p style="color: black;">If there is no conflict, declarations merge into one rule.</p>
+</body>
+
+-----------------------------------------------------------
+
+<style>
+header.navigation p {
+  color: blue;
+}
+p.blurb {
+  color: red;
+}
+p {
+  color: green !important;
+}
+</style>
+</head>
+<body>
+<header class="navigation">
+  <p class="blurb">Este parágrafo vai ficar a verde</p>
+</header>
+</body>
